@@ -1,0 +1,168 @@
+@import '~@angular/material/theming';
+@import './partials/mixins';
+@import './partials/palette';
+@include mat-core();
+$primary: mat-palette($md-bnskslate);
+$bsk-accent:  mat-palette($md-bnskslate, A500);
+$accent:  mat-palette($md-bnskblue, 900, 700, 800); 
+$warn:  mat-palette($md-bnskred, 500, 100, 800);
+$brainshark-app-theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($brainshark-app-theme);
+
+.dark-container{
+	$brainshark-appdark-theme: mat-dark-theme($primary, $accent, $warn);
+	@include angular-material-theme($brainshark-appdark-theme);
+	.mat-input-underline{
+		background: white;
+	}
+	.mat-focused {
+		.mat-input-placeholder{
+			color: white;
+		}
+	}
+	.mat-input-underline .mat-focused {
+		background: white;
+	}
+}
+
+//-----------------------------SnackBar Styles------------------------------
+snack-bar-container.success-snackbar {
+	background-color: #dff0d8;
+}
+
+.success-snackbar .mat-simple-snackbar {
+	color: #468847;
+}
+
+snack-bar-container.failure-snackbar {
+	background-color: #F0D8D8;
+}
+
+.failure-snackbar .mat-simple-snackbar {
+	color: #B92828;
+}
+
+.actions-checkbox {
+	.mat-checkbox-layout  {
+		.mat-checkbox-label {
+			margin-left: 13px;
+		}
+		.mat-checkbox-inner-container {
+			width: 15px;
+			height: 15px;
+		}
+	}
+}
+.challenge-actions-menu-panel{
+	.mat-menu-item {
+		height: auto;
+		min-height: 48px;
+	}
+}
+
+.text-accent {
+	color: map-get( $md-bnskslate, A500);
+}
+
+//-----------------------------Coaching dashboard------------------------------
+
+.input-search-container {
+	text-align: right;
+	height: 48px;
+	.mat-input-wrapper {
+	  top: 1px;
+	  width: 348px;
+	}
+}
+
+#filter-input-container .mat-input-wrapper {
+	padding-bottom: 0;
+	.mat-input-underline {
+		bottom: 0;
+	}
+}
+
+#all-challenges-md-tab-group >
+	.mat-tab-body-wrapper >
+	.mat-tab-body:nth-of-type(1) >
+	.mat-tab-body-content {
+	overflow: hidden;
+}
+
+.dashboard-tabs-container .mat-tab-label div {
+	display: inline-block;
+}
+
+.amp-default-skin.amp-big-play-centered .vjs-big-play-button {
+	min-width: 90px;
+    min-height: 90px;
+}
+
+.amp-default-skin .vjs-big-play-button::before {
+    font-size: 54px;
+}
+
+
+
+.card-style,
+.dashboard-component {
+    @include card-style();
+}
+
+.rating-radio-container {
+    .mat-radio-group{
+        .mat-radio-disabled{
+            .mat-radio-label{
+                .mat-radio-container{
+                    .mat-radio-outer-circle {
+                        border-color: rgba(0, 0, 0, 0.38);
+                    }
+                    .mat-radio-inner-circle {
+                        background-color: rgba(0, 0, 0, 0.38);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.no-padding-dialog-container {
+	.mat-dialog-container {
+		padding: 0;
+	}
+}
+
+.feedback-tooltip {
+    font-size: 14px;
+}
+
+.mat-fab.no-padding .mat-button-wrapper{
+	padding: 0px;
+}
+
+.mat-select-trigger {
+	font-size: 16px;
+}
+.mat-form-field-underline, .mat-input-underline {
+	background-color: rgba(0,0,0,.12);
+}
+
+.mat-option{
+	font-family: inherit;
+}
+
+.mat-icon{
+	user-select: none;
+}
+
+.mat-focused.mat-form-field-should-float {
+	.mat-input-placeholder {
+	  color: #e4002b;
+	}
+  }
+  
+  .mat-select:not(:focus) {
+	.ng-animating{
+	  color: rgba(0,0,0,.42) !important;
+	}
+  }

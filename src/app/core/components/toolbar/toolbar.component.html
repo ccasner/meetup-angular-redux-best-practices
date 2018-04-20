@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="toggleSidenav.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a [routerLink]="['/']">
+    <img class="bsk-logo" src="/assets/logo.svg" />
+  </a>
+  <ng-content></ng-content>
+</mat-toolbar>

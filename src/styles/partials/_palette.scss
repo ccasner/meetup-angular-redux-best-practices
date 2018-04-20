@@ -1,0 +1,192 @@
+/* For use in src/lib/core/theming/_palette.scss */
+$md-bnskslate: (
+    50 : #e8ebec,
+    100 : #c6ccd0,
+    200 : #a1aab1,
+    300 : #7b8892,
+    400 : #5e6f7a,
+    500 : #425563,
+    600 : #3c4e5b,
+    700 : #334451,
+    800 : #2b3b47,
+    900 : #1d2a35,
+    A100 : #7bc0ff,
+    A200 : #48a8ff,
+    A400 : #1590ff,
+    A700 : #0083fb,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-bnskblue: ( 
+    50 : #e8f6f8, 
+    100 : #c5e8ef, 
+    200 : #9ed8e4, 
+    300 : #77c8d9, 
+    400 : #5abdd0, 
+    500 : #3db1c8, 
+    600 : #37aac2, 
+    700 : #2fa1bb, 
+    800 : #2798b4, 
+    900 : #1a88a7, 
+    A100 : #ddf7ff, 
+    A200 : #aaebff, 
+    A400 : #77deff, 
+    A700 : #5dd8ff, 
+    contrast: ( 
+        50 : #000000, 
+        100 : #000000, 
+        200 : #000000, 
+        300 : #000000, 
+        400 : #ffffff, 
+        500 : #ffffff, 
+        600 : #ffffff, 
+        700 : #ffffff, 
+        800 : #ffffff, 
+        900 : #ffffff, 
+        A100 : #000000, 
+        A200 : #000000, 
+        A400 : #000000, 
+        A700 : #000000, 
+    ) 
+); 
+
+$md-bnskred: (
+    50 : #fce0e6,
+    100 : #f7b3bf,
+    200 : #f28095,
+    300 : #ec4d6b,
+    400 : #e8264b,
+    500 : #e4002b,
+    600 : #e10026,
+    700 : #dd0020,
+    800 : #d9001a,
+    900 : #d10010,
+    A100 : #fff9f9,
+    A200 : #ffc6c8,
+    A400 : #ff9397,
+    A700 : #ff7a7e,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-bnsksecondaryblue:(
+    400:#01426A,
+);
+
+$md-bnskgray:(
+    400:#505050,
+);
+
+$md-bnskorange:(
+    400:#f9a923,
+);
+
+$md-bnskgreyc1:(
+    400:#F1F1F1,
+);
+
+$md-bnskgreyc2:(
+    400:#CCCCCC,
+);
+
+$md-bnskgreyc3:(
+    400:#999999,
+);
+
+$md-bnskgreyc4:(
+    400:#666666,
+);
+
+$md-bnskgreyc5:(
+    400:#505050,
+);
+
+$md-bnskgreyc6:(
+    400:#a0aab1,
+);
+
+$md-bnskgreyc7:(
+    400:#71808a,
+);
+
+$md-bnskgreyc8:(
+    400:#E1E1E1,
+);
+
+$md-bnsksecondarygrey:(
+    400:#C7C9C7,
+);
+
+$md-bnsktertiaryblue:(
+    400:#3EB1C8,
+);
+
+$md-bnsktertiarygreen:(
+    400:#CDEA80,
+);
+
+$md-bnskgreen:(
+    400:#4B944B,
+);
+
+$md-bnskyellow: (
+    50 : #fffcf7,
+    100 : #fef8ec,
+    200 : #fef4e0,
+    300 : #fdefd3,
+    400 : #fcebc9,
+    500 : #fce8c0,
+    600 : #fce5ba,
+    700 : #fbe2b2,
+    800 : #fbdeaa,
+    900 : #fad89c,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #9e8760,
+        100 : #9e8760,
+        200 : #9e8760,
+        300 : #9e8760,
+        400 : #9e8760,
+        500 : #9e8760,
+        600 : #9e8760,
+        700 : #9e8760,
+        800 : #9e8760,
+        900 : #9e8760,
+        A100 : #9e8760,
+        A200 : #9e8760,
+        A400 : #9e8760,
+        A700 : #9e8760,
+    )
+);

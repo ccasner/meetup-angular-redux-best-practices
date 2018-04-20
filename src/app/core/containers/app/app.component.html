@@ -1,0 +1,8 @@
+<app-wrap>
+  <app-toolbar (toggleSidenav)="toggleSidenav()">
+    <app-title [title]="title$ | async"></app-title>
+  </app-toolbar>
+  <app-sidenav-container [opened]="sidenavOpened$ | async">
+    <router-outlet></router-outlet>
+  </app-sidenav-container>
+</app-wrap>

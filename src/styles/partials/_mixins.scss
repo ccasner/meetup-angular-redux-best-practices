@@ -1,0 +1,33 @@
+$mq-breakpoints: ( mobile : 320px, tablet : 740px, desktop: 980px, wide : 1300px);
+@mixin respond-to($breakpoint) {
+    @if map-has-key($mq-breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin card-style() {
+    overflow: hidden;
+    padding: 10px 15px 20px;
+    border: 1px solid #DDD;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .12);
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    font-family: 'HelveticaNeueRoman', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+    h2 {
+        color: #444;
+        border-bottom: 1px solid #DDD;
+        font-size: 20px;
+        padding: 0 0 23px 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+@mixin highlight($background-color) {
+	background: $background-color;
+	color: darken($background-color, 70%);
+}

@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "styles/brainshark.material.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -75,6 +76,9 @@
     },
     "service": {
       "spec": false
+    },
+    "schematics": {
+      "collection": "@ngrx/schematics"
     }
   }
 }
