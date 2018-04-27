@@ -3,12 +3,13 @@ import { ExampleModel } from '../../models/ExampleModel.model';
 
 @Component({
   selector: 'app-example-1-display',
-  templateUrl: './example-1.component.html',
-  styleUrls: ['./example-1.component.scss'],
+  templateUrl: './example-1-display.component.html',
+  styleUrls: ['./example-1-display.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Example1DisplayComponent implements OnInit {
-  @Input() exampleData: ExampleModel;
+  @Input() exampleData: ExampleModel[];
+  displayedColumns = ['id', 'title'];
 
   constructor() { }
 

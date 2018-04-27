@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
@@ -28,7 +29,7 @@ import { WrapComponent } from './components/wrap/wrap.component';
     CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-
+    HttpClientModule,
     MaterialModule,
 
     // @ngrx

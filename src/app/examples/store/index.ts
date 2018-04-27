@@ -1,9 +1,17 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromExamples from './examples.reducer';
+import * as fromExampleData from './example-data.reducer';
+import * as fromRoot from '../../core/store';
 
-export const getExamplesState = createFeatureSelector<fromExamples.State>('examples');
+export interface ExamplesState {
+    exampleData: fromExampleData.State;
+}
 
-export const getExampleData = createSelector(
-    getExamplesState,
-    (state: fromExamples.State) => state.exampleData,
-);
+export interface State extends fromRoot.State {
+    'exampleData': ExamplesState;
+}
+
+export const reducers = {
+    exampleData: fromExampleData.reducer
+};
+export const getExamplesState = createFeatureSelector<ExamplesState>('examples');
+

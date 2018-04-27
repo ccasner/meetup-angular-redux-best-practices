@@ -3,7 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { State } from '../../../core/store';
 import { ExampleModel } from '../../models/ExampleModel.model';
-import { getExampleData } from '../../store';
+import { getExampleData } from '../../store/example-data.selectors';
+
 
 @Component({
   selector: 'app-example-1',
@@ -12,7 +13,7 @@ import { getExampleData } from '../../store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Example1Component implements OnInit {
-  exampleData$: Observable<ExampleModel>;
+  exampleData$: Observable<ExampleModel[]>;
   constructor(private store: Store<State>) {
     this.exampleData$ = this.store.pipe(select(getExampleData));
   }

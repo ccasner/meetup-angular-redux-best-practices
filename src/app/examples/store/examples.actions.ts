@@ -2,12 +2,24 @@ import { Action } from '@ngrx/store';
 import { ExampleModel } from '../models/ExampleModel.model';
 
 export enum ExamplesActionTypes {
-  SetData = '[Examples] Set Data'
+  LoadData = '[Examples] Load Data',
+  LoadDataSuccess = '[Examples] Load Data Success',
+  LoadDataError = '[Examples] Load Data Error',
 }
 
-export class SetData implements Action {
-  readonly type = ExamplesActionTypes.SetData;
-  constructor(public payload: ExampleModel) { }
+export class LoadData implements Action {
+  readonly type = ExamplesActionTypes.LoadData;
+  constructor() { }
 }
-
-export type ExamplesActions = SetData;
+export class LoadDataSuccess implements Action {
+  readonly type = ExamplesActionTypes.LoadDataSuccess;
+  constructor(public payload: ExampleModel[]) { }
+}
+export class LoadDataError implements Action {
+  readonly type = ExamplesActionTypes.LoadDataError;
+  constructor(public payload: any) { }
+}
+export type ExamplesActions
+  = LoadData
+  | LoadDataSuccess
+  | LoadDataError;
