@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { State } from '../../../core/store';
 import { ExampleModel } from '../../models/ExampleModel.model';
 import { getExampleData } from '../../store/example-data.selectors';
-import { ClearData } from '../../store/examples.actions';
+import { ClearData, LoadData } from '../../store/examples.actions';
 
 @Component({
   selector: 'app-example-1',
@@ -24,5 +24,7 @@ export class Example1Component implements OnInit {
   clearExampleData() {
     this.store.dispatch(new ClearData());
   }
-
+  loadData($event: number) {
+    this.store.dispatch(new LoadData($event));
+  }
 }

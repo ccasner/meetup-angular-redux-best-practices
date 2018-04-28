@@ -1,32 +1,36 @@
+import { CdkTableModule } from '@angular/cdk/table';
 import { NgModule } from '@angular/core';
 import {
     MatButtonModule,
+    MatCardModule,
     MatCheckboxModule,
     MatIconModule,
-    MatToolbarModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatTableModule,
-    MatCardModule,
+    MatToolbarModule,
     MatTooltipModule,
-    MatProgressSpinnerModule,
 } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk/table';
 
 const MatModules = [
     CdkTableModule,
     MatButtonModule,
+    MatCardModule,
     MatCheckboxModule,
     MatIconModule,
-    MatToolbarModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatTableModule,
-    MatCardModule,
+    MatToolbarModule,
     MatTooltipModule,
-    MatProgressSpinnerModule,
 ];
 
 @NgModule({
-  imports: MatModules,
-  exports: MatModules
+    imports: MatModules,
+    exports: MatModules
 })
 export class MaterialModule { }

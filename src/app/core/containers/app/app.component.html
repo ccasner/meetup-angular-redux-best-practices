@@ -6,7 +6,7 @@
     [exampleDataLoading]="exampleDataLoading$ | async">
     <app-title [title]="title$ | async"></app-title>
   </app-toolbar>
-  <app-sidenav-container [opened]="sidenavOpened$ | async">
+  <app-sidenav-container [opened]="sidenavOpened$ | async" (closeSidenav)="closeSidenav()">
     <router-outlet></router-outlet>
   </app-sidenav-container>
 </app-wrap>

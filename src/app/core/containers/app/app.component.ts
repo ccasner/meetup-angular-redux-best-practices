@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { State } from '../../store';
-import { ToggleSidenav } from '../../store/app/app.actions';
+import { ToggleSidenav, SetSidenavOpened } from '../../store/app/app.actions';
 import { getSidenavOpened, getTitle } from '../../store/app/app.selectors';
 import { getHasExampleData, getTotalExamples, getExampleDataLoading } from '../../../examples/store/example-data.selectors';
 import { LoadData } from '../../../examples/store/examples.actions';
@@ -32,8 +32,13 @@ export class AppComponent {
   toggleSidenav() {
     this.store.dispatch(new ToggleSidenav());
   }
-
+  openSidenav() {
+    this.store.dispatch(new SetSidenavOpened(true));
+  }
+  closeSidenav() {
+    this.store.dispatch(new SetSidenavOpened(false));
+  }
   getExampleData() {
-    this.store.dispatch(new LoadData());
+    this.store.dispatch(new LoadData(1));
   }
 }

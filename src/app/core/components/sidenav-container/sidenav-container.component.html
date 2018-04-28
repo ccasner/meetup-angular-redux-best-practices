@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav [opened]="opened">
-    <app-sidenav></app-sidenav>
+    <app-sidenav (closeSidenav)="closeSidenav.emit()"></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <ng-content></ng-content>

@@ -18,7 +18,7 @@ export class ExampleDataGuard implements CanActivate {
                 select(getHasExampleData),
                 tap((hasData) => {
                     if (!hasData) {
-                        this.store.dispatch(new LoadData());
+                        this.store.dispatch(new LoadData(1));
                     }
                 }),
                 take(1)

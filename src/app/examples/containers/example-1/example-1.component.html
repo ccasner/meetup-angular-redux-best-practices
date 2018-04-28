@@ -1,3 +1,4 @@
 <app-example-1-display 
     [exampleData]="exampleData$ | async"
-    (clearExampleData)="clearExampleData()"></app-example-1-display>
+    (clearExampleData)="clearExampleData()"
+    (loadData)="loadData($event)"></app-example-1-display>

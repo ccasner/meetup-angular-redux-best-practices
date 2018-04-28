@@ -31,7 +31,7 @@ export function reducer(state = initialState, action: ExamplesActions): State {
 
     case ExamplesActionTypes.LoadDataSuccess: {
       return {
-        ...adapter.addAll(action.payload, state),
+        ...adapter.upsertMany(action.payload, state),
         exampleDataLoading: false,
       };
     }

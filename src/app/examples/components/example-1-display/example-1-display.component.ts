@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { ExampleModel } from '../../models/ExampleModel.model';
 
 @Component({
@@ -7,14 +8,14 @@ import { ExampleModel } from '../../models/ExampleModel.model';
   styleUrls: ['./example-1-display.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Example1DisplayComponent implements OnInit {
-  @Input() exampleData: ExampleModel[];
-  @Output() clearExampleData = new EventEmitter();
+export class Example1DisplayComponent {
   displayedColumns = ['id', 'title'];
-
-  constructor() { }
-
-  ngOnInit() {
+  dataSource: MatTableDataSource<ExampleModel>;
+  @Input() set exampleData(data: ExampleModel[]) {
+    this.dataSource = new MatTableDataSource<ExampleModel>(data);
+    this.dataSource.paginator = this.paginator;
   }
-
+  @Output() clearExampleData = new EventEmitter();
+  @Output() loadData = new EventEmitter<number>();
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 }

@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { Update } from '@ngrx/entity'
 import { ExampleModel } from '../models/ExampleModel.model';
 
 export enum ExamplesActionTypes {
@@ -10,11 +11,11 @@ export enum ExamplesActionTypes {
 
 export class LoadData implements Action {
   readonly type = ExamplesActionTypes.LoadData;
-  constructor() { }
+  constructor(public payload: number) { }
 }
 export class LoadDataSuccess implements Action {
   readonly type = ExamplesActionTypes.LoadDataSuccess;
-  constructor(public payload: ExampleModel[]) { }
+  constructor(public payload: Update<ExampleModel>[]) { }
 }
 export class LoadDataError implements Action {
   readonly type = ExamplesActionTypes.LoadDataError;
