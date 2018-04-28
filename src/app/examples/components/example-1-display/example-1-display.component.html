@@ -5,7 +5,7 @@
   <button mat-button (click)="loadData.emit(2)">Load Data Set 2</button>
 </mat-card>
 
-<div class="example-container mat-elevation-z2" *ngIf="exampleData && exampleData.length">
+<div class="example-container mat-elevation-z2" [class.hidden]="!exampleData || !exampleData.length">
   <mat-table #table [dataSource]="dataSource">
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
