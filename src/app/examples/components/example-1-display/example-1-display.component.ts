@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ExampleModel } from '../../models/ExampleModel.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { ExampleModel } from '../../models/ExampleModel.model';
 })
 export class Example1DisplayComponent implements OnInit {
   @Input() exampleData: ExampleModel[];
+  @Output() clearExampleData = new EventEmitter();
   displayedColumns = ['id', 'title'];
 
   constructor() { }

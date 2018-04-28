@@ -1,8 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Action } from '@ngrx/store';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { ExamplesActions, ExamplesActionTypes } from './examples.actions';
 import { ExampleModel } from '../models/ExampleModel.model';
+import { ExamplesActionTypes, ExamplesActions } from './examples.actions';
 
 export interface State extends EntityState<ExampleModel> {
   exampleDataLoading: boolean;
@@ -41,6 +40,13 @@ export function reducer(state = initialState, action: ExamplesActions): State {
       return {
         ...state,
         exampleDataLoadError: action.payload,
+        exampleDataLoading: false,
+      };
+    }
+
+    case ExamplesActionTypes.ClearData: {
+      return {
+        ...adapter.removeAll(state),
         exampleDataLoading: false,
       };
     }

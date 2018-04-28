@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,7 +7,11 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToolbarComponent implements OnInit {
+  @Input() hasExampleData: boolean;
+  @Input() exampleDataCount: number;
+  @Input() exampleDataLoading: boolean;
   @Output() toggleSidenav = new EventEmitter();
+  @Output() getExampleData = new EventEmitter();
 
   constructor() { }
 

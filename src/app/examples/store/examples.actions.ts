@@ -5,6 +5,7 @@ export enum ExamplesActionTypes {
   LoadData = '[Examples] Load Data',
   LoadDataSuccess = '[Examples] Load Data Success',
   LoadDataError = '[Examples] Load Data Error',
+  ClearData = '[Examples] Clear Data',
 }
 
 export class LoadData implements Action {
@@ -19,7 +20,12 @@ export class LoadDataError implements Action {
   readonly type = ExamplesActionTypes.LoadDataError;
   constructor(public payload: any) { }
 }
+export class ClearData implements Action {
+  readonly type = ExamplesActionTypes.ClearData;
+  constructor() { }
+}
 export type ExamplesActions
   = LoadData
   | LoadDataSuccess
-  | LoadDataError;
+  | LoadDataError
+  | ClearData;

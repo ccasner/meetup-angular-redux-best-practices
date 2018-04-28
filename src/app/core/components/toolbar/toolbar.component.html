@@ -6,4 +6,14 @@
     <img class="bsk-logo" src="/assets/logo.svg" />
   </a>
   <ng-content></ng-content>
+  <div class="flex-spacer"></div>
+  <div>
+    <button *ngIf="!hasExampleData && !exampleDataLoading" mat-icon-button (click)="getExampleData.emit()" matTooltipPosition="left" matTooltip="Get data">
+      <mat-icon>cloud_download</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="hasExampleData" class="count-badge" matTooltipPosition="left"  [matTooltip]="'Got ' + exampleDataCount + ' rows of data.'">
+        {{exampleDataCount}}
+    </button>
+    <mat-spinner *ngIf="exampleDataLoading" [diameter]="20" [strokeWidth]="2" color="accent"></mat-spinner>
+  </div>
 </mat-toolbar>

@@ -1,5 +1,9 @@
 <app-wrap>
-  <app-toolbar (toggleSidenav)="toggleSidenav()">
+  <app-toolbar (toggleSidenav)="toggleSidenav()" 
+    (getExampleData)="getExampleData()"  
+    [hasExampleData]="hasExampleData$ | async"
+    [exampleDataCount]="exampleDataCount$ | async"
+    [exampleDataLoading]="exampleDataLoading$ | async">
     <app-title [title]="title$ | async"></app-title>
   </app-toolbar>
   <app-sidenav-container [opened]="sidenavOpened$ | async">

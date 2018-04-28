@@ -1,7 +1,6 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-
+import { createSelector } from '@ngrx/store';
+import { ExamplesState, getExamplesState } from '../store';
 import * as fromExampleData from './example-data.reducer';
-import { getExamplesState, ExamplesState } from '../store';
 
 export const getExamplesEntitiesState = createSelector(
     getExamplesState,
@@ -20,4 +19,17 @@ export const getExampleData = createSelector(
     (entities, ids) => {
         return (ids as string[]).map(id => entities[id]);
     }
+);
+
+export const getExampleDataLoading = createSelector(
+    getExamplesEntitiesState,
+    (state: fromExampleData.State) => state.exampleDataLoading
+);
+export const getExampleDataLoadError = createSelector(
+    getExamplesEntitiesState,
+    (state: fromExampleData.State) => state.exampleDataLoadError
+);
+export const getHasExampleData = createSelector(
+    getExampleData,
+    (data) => data.length > 0
 );

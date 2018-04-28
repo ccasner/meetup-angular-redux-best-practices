@@ -7,6 +7,8 @@ import {
     MatSidenavModule,
     MatTableModule,
     MatCardModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
@@ -19,6 +21,8 @@ const MatModules = [
     MatSidenavModule,
     MatTableModule,
     MatCardModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
 ];
 
 @NgModule({

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { State } from '../../store';
 import { ToggleSidenav } from '../../store/app/app.actions';
 import { getSidenavOpened, getTitle } from '../../store/app/app.selectors';
+import { getHasExampleData, getTotalExamples, getExampleDataLoading } from '../../../examples/store/example-data.selectors';
+import { LoadData } from '../../../examples/store/examples.actions';
 
 
 @Component({
@@ -15,13 +17,23 @@ import { getSidenavOpened, getTitle } from '../../store/app/app.selectors';
 export class AppComponent {
   title$: Observable<string>;
   sidenavOpened$: Observable<boolean>;
+  hasExampleData$: Observable<boolean>;
+  exampleDataCount$: Observable<number>;
+  exampleDataLoading$: Observable<boolean>;
 
   constructor(private store: Store<State>) {
     this.title$ = this.store.pipe(select(getTitle));
     this.sidenavOpened$ = this.store.pipe(select(getSidenavOpened));
+    this.hasExampleData$ = this.store.pipe(select(getHasExampleData));
+    this.exampleDataCount$ = this.store.pipe(select(getTotalExamples));
+    this.exampleDataLoading$ = this.store.pipe(select(getExampleDataLoading));
   }
 
   toggleSidenav() {
     this.store.dispatch(new ToggleSidenav());
+  }
+
+  getExampleData() {
+    this.store.dispatch(new LoadData());
   }
 }
