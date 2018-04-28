@@ -10,9 +10,11 @@ import { ExampleModel } from '../../models/ExampleModel.model';
 })
 export class Example1DisplayComponent {
   displayedColumns = ['id', 'title'];
+  exampleData: ExampleModel[];
   dataSource: MatTableDataSource<ExampleModel>;
-  @Input() set exampleData(data: ExampleModel[]) {
-    this.dataSource = new MatTableDataSource<ExampleModel>(data);
+  @Input() set inputExampleData(exampleData: ExampleModel[]) {
+    this.exampleData = exampleData;
+    this.dataSource = new MatTableDataSource<ExampleModel>(exampleData);
     this.dataSource.paginator = this.paginator;
   }
   @Output() clearExampleData = new EventEmitter();
