@@ -18,4 +18,8 @@ export class Example1DisplayComponent {
   @Output() clearExampleData = new EventEmitter();
   @Output() loadData = new EventEmitter<number>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  clearData() {
+    this.clearExampleData.emit();
+    this.dataSource.paginator.firstPage();
+  }
 }
