@@ -3,8 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { State } from '../../../core/store';
 import { ExampleModel } from '../../models/ExampleModel.model';
-import { getExampleData } from '../../store/example-data.selectors';
-import { ClearData, LoadData } from '../../store/examples.actions';
+import { getExampleData } from '../../store/example/example-data.selectors';
+import { ClearData, LoadData } from '../../store/example/examples.actions';
 
 @Component({
   selector: 'app-example-1',

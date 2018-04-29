@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { ExamplesState, getExamplesState } from '../store';
+import { ExamplesState, getExamplesState } from '../../store';
 import * as fromExampleData from './example-data.reducer';
 
 export const getExamplesEntitiesState = createSelector(

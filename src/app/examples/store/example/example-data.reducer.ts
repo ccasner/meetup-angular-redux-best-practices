@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { ExampleModel } from '../models/ExampleModel.model';
+import { ExampleModel } from '../../models/ExampleModel.model';
 import { ExamplesActionTypes, ExamplesActions } from './examples.actions';
 
 export interface State extends EntityState<ExampleModel> {

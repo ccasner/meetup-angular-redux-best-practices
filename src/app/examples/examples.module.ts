@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { ExamplesEffects } from './store/examples.effects';
+import { ExamplesEffects } from './store/example/examples.effects';
 import { reducers } from './store';
 
 // modules

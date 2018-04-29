@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { State } from '../../store';
 import { ToggleSidenav, SetSidenavOpened } from '../../store/app/app.actions';
 import { getSidenavOpened, getTitle } from '../../store/app/app.selectors';
-import { getHasExampleData, getTotalExamples, getExampleDataLoading } from '../../../examples/store/example-data.selectors';
-import { LoadData } from '../../../examples/store/examples.actions';
+import { getHasExampleData, getTotalExamples, getExampleDataLoading } from '../../../examples/store/example/example-data.selectors';
+import { LoadData } from '../../../examples/store/example/examples.actions';
 
 
 @Component({
