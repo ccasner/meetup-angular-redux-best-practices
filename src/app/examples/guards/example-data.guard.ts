@@ -4,9 +4,9 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, switchMap, take, tap } from 'rxjs/operators';
-import * as fromExampleData from '../store/example-data.reducer';
-import { getHasExampleData } from '../store/example-data.selectors';
-import { LoadData } from '../store/examples.actions';
+import * as fromExampleData from '../store/example-data/example-data.reducer';
+import { getHasExampleData } from '../store/example-data/example-data.selectors';
+import { LoadData } from '../store/example-data/example-data.actions';
 
 @Injectable()
 export class ExampleDataGuard implements CanActivate {

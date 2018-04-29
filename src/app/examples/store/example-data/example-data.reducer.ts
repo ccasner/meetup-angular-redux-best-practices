@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { ExampleModel } from '../models/ExampleModel.model';
-import { ExamplesActionTypes, ExamplesActions } from './examples.actions';
+import { ExampleModel } from '../../models/ExampleModel.model';
+import { ExampleDataActionTypes, ExamplesActions } from './example-data.actions';
 
 export interface State extends EntityState<ExampleModel> {
   exampleDataLoading: boolean;
@@ -21,7 +21,7 @@ export const initialState: State = adapter.getInitialState({
 export function reducer(state = initialState, action: ExamplesActions): State {
   switch (action.type) {
 
-    case ExamplesActionTypes.LoadData: {
+    case ExampleDataActionTypes.LoadData: {
       return {
         ...state,
        exampleDataLoading: true,
@@ -29,14 +29,14 @@ export function reducer(state = initialState, action: ExamplesActions): State {
     }
 
 
-    case ExamplesActionTypes.LoadDataSuccess: {
+    case ExampleDataActionTypes.LoadDataSuccess: {
       return {
         ...adapter.upsertMany(action.payload, state),
         exampleDataLoading: false,
       };
     }
 
-    case ExamplesActionTypes.LoadDataError: {
+    case ExampleDataActionTypes.LoadDataError: {
       return {
         ...state,
         exampleDataLoadError: action.payload,
@@ -44,7 +44,7 @@ export function reducer(state = initialState, action: ExamplesActions): State {
       };
     }
 
-    case ExamplesActionTypes.ClearData: {
+    case ExampleDataActionTypes.ClearData: {
       return {
         ...adapter.removeAll(state),
         exampleDataLoading: false,

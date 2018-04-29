@@ -4,15 +4,15 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Update } from '@ngrx/entity';
 import { of } from 'rxjs/observable/of';
 import { catchError, delay, map, switchMap } from 'rxjs/operators';
-import { ExampleModel } from '../models/ExampleModel.model';
-import { ExamplesActionTypes, LoadDataError, LoadDataSuccess, LoadData } from './examples.actions';
+import { ExampleModel } from '../../models/ExampleModel.model';
+import { ExampleDataActionTypes, LoadDataError, LoadDataSuccess, LoadData } from './example-data.actions';
 
 @Injectable()
-export class ExamplesEffects {
+export class ExampleDataEffects {
 
   @Effect()
   loadData$ = this.actions$.pipe(
-     ofType<LoadData>(ExamplesActionTypes.LoadData),
+     ofType<LoadData>(ExampleDataActionTypes.LoadData),
      delay(500), // Simulate API delay
      map(action => action.payload),
      switchMap((dataSet) => {

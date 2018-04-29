@@ -3,19 +3,20 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { ExamplesEffects } from './store/examples.effects';
+// store
 import { reducers } from './store';
+import { ExampleDataEffects } from './store/example-data/example-data.effects';
 
 // modules
 import { ExamplesRoutingModule } from './examples-routing.module';
 import { MaterialModule } from '../shared/material/material.module';
 
 // containers
-import { Example1Component } from './containers/example-1/example-1.component';
+import { ExampleDataComponent } from './containers/example-data/example-data.component';
 import { Example2Component } from './containers/example-2/example-2.component';
 
 // components
-import { Example1DisplayComponent } from './components/example-1-display/example-1-display.component';
+import { ExampleDataDisplayComponent } from './components/example-data-display/example-data-display.component';
 
 // providers
 import { ExampleDataGuard } from './guards/example-data.guard';
@@ -26,12 +27,12 @@ import { ExampleDataGuard } from './guards/example-data.guard';
     ExamplesRoutingModule,
     MaterialModule,
     StoreModule.forFeature('examples', reducers),
-    EffectsModule.forFeature([ExamplesEffects])
+    EffectsModule.forFeature([ExampleDataEffects])
   ],
   declarations: [
-    Example1Component,
+    ExampleDataComponent,
     Example2Component,
-    Example1DisplayComponent,
+    ExampleDataDisplayComponent,
   ],
   providers: [ExampleDataGuard],
 })
