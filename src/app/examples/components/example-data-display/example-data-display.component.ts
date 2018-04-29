@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatSort, SortDirection } from '@angular/material';
 import { ExampleModel } from '../../models/ExampleModel.model';
 
 @Component({
@@ -15,12 +15,12 @@ export class ExampleDataDisplayComponent implements AfterViewInit {
 
   @Input() set inputExampleData(exampleData: ExampleModel[]) {
     this.exampleData = exampleData;
-    this.dataSource = new MatTableDataSource<ExampleModel>(exampleData);
-    this.dataSource.paginator = this.paginator;
+    this.setDataSource(this.exampleData, this.paginator, this.sort);
   }
   @Output() clearExampleData = new EventEmitter();
   @Output() loadData = new EventEmitter<number>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   clearData() {
     this.clearExampleData.emit();
@@ -29,5 +29,24 @@ export class ExampleDataDisplayComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  setDataSource(exampleData: ExampleModel[], paginator: MatPaginator, sort: MatSort) {
+    this.dataSource = new MatTableDataSource<ExampleModel>(exampleData);
+
+    if (paginator) {
+      this.dataSource.paginator = paginator;
+    }
+
+    if (sort) {
+      this.dataSource.sort = sort;
+      if (this.dataSource.sort.sortables.has('id')) {
+        const idSortable = this.dataSource.sort.sortables.get('id');
+        if (this.dataSource.sort.getNextSortDirection(idSortable) === 'asc') {
+          this.dataSource.sort.sort(idSortable);
+        }
+      }
+    }
   }
 }

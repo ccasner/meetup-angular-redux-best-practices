@@ -1,4 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { SetTitle } from '../../store/app/app.actions';
+import { State } from '../../../core/store';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<State>) {
+    this.store.dispatch(new SetTitle('Angular Redux Best Practices'));
+   }
 
   ngOnInit() {
   }

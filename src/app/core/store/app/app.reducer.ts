@@ -8,7 +8,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  title: 'Angular Redux Best Practices',
+  title: null,
   sidenavOpened: false,
 };
 
