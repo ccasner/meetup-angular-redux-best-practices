@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { map, tap } from 'rxjs/operators';
 import { AppActionTypes, SetTitle } from './app.actions';
-import { Title } from '@angular/platform-browser';
 
 @Injectable()
 export class AppEffects {

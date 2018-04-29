@@ -1,6 +1,4 @@
-import { Action } from '@ngrx/store';
 import { AppActionTypes, AppActions } from './app.actions';
-
 
 export interface State {
   title: string;
