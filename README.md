@@ -117,3 +117,68 @@ export class AppEffects {
   constructor(private actions$: Actions, private titleService: Title) {}
 }
 ```
+## Selectors
+Once you have a store, and the ability to change the state using actions, reducers and effects, we will use selectors to get the data from the store as an observable. The benefit of this is any time the state has changed, the value of the observable will be updated, and will then be automatically bound to the component displaying that information. Furthermore, this can all be done while "disabling" Angular's default change detection cycles by setting the "changeDetection" to "OnPush". This should result in better performance.
+
+Here's a basic example of how to get the app title we showed how to update in the store in the previous examples:
+
+Create a selector
+
+```javascript
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+import * as fromApp from './app.reducer';
+import { getAppState } from '../../store';
+
+export const getTitle = createSelector(
+    getAppState,
+    (state: fromApp.State) => state.title,
+);
+```
+Create an observable from the selector:
+
+```javascript
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { State } from '../../store';
+import { getTitle } from '../../store/app/app.selectors';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class AppComponent {
+  title$: Observable<string>;
+
+  constructor(private store: Store<State>) {
+    this.title$ = this.store.pipe(select(getTitle));
+  }
+}
+```
+Create a presentation component:
+
+TS
+```javascript
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-title',
+  templateUrl: './title.component.html',
+  styleUrls: ['./title.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class TitleComponent {
+  @Input() title: string;
+}
+```
+HTML
+```html
+<h1 class="example-app-name">{{title}}</h1>
+```
+Use the async pipe to "subscribe" to the selector's observable and pass it to the presentation component's @Input:
+```html
+<app-title [title]="title$ | async"></app-title>
+```
