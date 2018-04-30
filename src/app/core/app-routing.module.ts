@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './containers/home/home.component';
+import { RouterModule, Routes } from '@angular/router';
 import { ExamplesModule } from '../examples/examples.module';
+import { HomeComponent } from './containers/home/home.component';
 
 export function loadExamplesModule() {
   return ExamplesModule;

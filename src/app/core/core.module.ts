@@ -9,8 +9,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import 'hammerjs';
 
 import { environment } from '../../environments/environment';
+
+// store
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { reducers, metaReducers } from './store';
+import { AppEffects } from './store/app/app.effects';
 
 // modules
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +37,7 @@ import { WrapComponent } from './components/wrap/wrap.component';
 
     // @ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   declarations: [

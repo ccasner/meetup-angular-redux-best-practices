@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromExampleData from './example/example-data.reducer';
 import * as fromHackerNews from './hacker-news/hacker-news.reducer';
+import * as fromExampleData from './example-data/example-data.reducer';
 import * as fromRoot from '../../core/store';
 
 export interface ExamplesState {

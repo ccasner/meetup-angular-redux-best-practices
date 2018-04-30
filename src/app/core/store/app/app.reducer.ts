@@ -1,6 +1,4 @@
-import { Action } from '@ngrx/store';
 import { AppActionTypes, AppActions } from './app.actions';
-
 
 export interface State {
   title: string;
@@ -8,7 +6,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  title: 'Angular Redux Best Practices',
+  title: null,
   sidenavOpened: false,
 };
 
