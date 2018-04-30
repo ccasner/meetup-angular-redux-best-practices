@@ -1,5 +1,5 @@
-import { Action } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
+import { Action } from '@ngrx/store';
 import { ExampleModel } from '../../models/ExampleModel.model';
 
 export enum ExampleDataActionTypes {

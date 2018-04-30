@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource, MatSort, SortDirection } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { ExampleModel } from '../../models/ExampleModel.model';
 
 @Component({

@@ -7,7 +7,6 @@ import { State } from '../../store';
 import { SetSidenavOpened, ToggleSidenav } from '../../store/app/app.actions';
 import { getSidenavOpened, getTitle } from '../../store/app/app.selectors';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,12 +31,15 @@ export class AppComponent {
   toggleSidenav() {
     this.store.dispatch(new ToggleSidenav());
   }
+
   openSidenav() {
     this.store.dispatch(new SetSidenavOpened(true));
   }
+
   closeSidenav() {
     this.store.dispatch(new SetSidenavOpened(false));
   }
+
   getExampleData() {
     this.store.dispatch(new LoadData(1));
   }

@@ -6,15 +6,14 @@ import { AppActionTypes, SetTitle } from './app.actions';
 
 @Injectable()
 export class AppEffects {
-
-  @Effect({dispatch: false})
-  setPageTitle$ = this.actions$.pipe(
-     ofType<SetTitle>(AppActionTypes.SetTitle),
-     map(action => action.payload),
-     tap((title) => {
-        this.titleService.setTitle(title + ' | Brainshark Angular Meetup');
-     }),
+    @Effect({ dispatch: false })
+    setPageTitle$ = this.actions$.pipe(
+        ofType<SetTitle>(AppActionTypes.SetTitle),
+        map(action => action.payload),
+        tap((title) => {
+            this.titleService.setTitle(title + ' | Brainshark Angular Meetup');
+        }),
     );
 
-  constructor(private actions$: Actions, private titleService: Title) {}
+    constructor(private actions$: Actions, private titleService: Title) { }
 }
