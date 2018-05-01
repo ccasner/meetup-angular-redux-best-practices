@@ -1,10 +1,10 @@
 import { createSelector } from '@ngrx/store';
-import { HackerNewsState, getHackerNewsState } from '../../store';
+import { ExamplesState, getExamplesState } from '../../store';
 import * as fromHackerNewsData from './hacker-news.reducer';
 
 export const getHackerNewsEntitiesState = createSelector(
-    getHackerNewsState,
-    (state: HackerNewsState) => state.articleData
+    getExamplesState,
+    (state: ExamplesState) => state.articleData
 );
 export const {
     selectIds: getArticlesIds,
@@ -31,5 +31,5 @@ export const getArticlesLoadError = createSelector(
 );
 export const getHasArticles = createSelector(
     getArticles,
-    (data) => data.length > 0
+    (data) => data && data.length > 0
 );

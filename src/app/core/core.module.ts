@@ -46,7 +46,7 @@ import { WrapComponent } from './components/wrap/wrap.component';
     SidenavContainerComponent,
     SidenavComponent,
     TitleComponent,
-    HomeComponent
+    HomeComponent,
   ],
   exports: [
     AppRoutingModule,

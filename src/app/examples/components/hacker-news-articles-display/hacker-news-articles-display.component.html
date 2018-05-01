@@ -1,15 +1,14 @@
 <mat-card>
-  <p>This shows guarded data + http request effect + ngrx entities</p>
-  <button mat-button (click)="clearData()">Clear Data</button>
-  <button mat-button (click)="loadData.emit(1)">Load Data Set 1</button>
-  <button mat-button (click)="loadData.emit(2)">Load Data Set 2</button>
+  <p>This shows ...</p>
+  <button mat-button (click)="clearData()">Clear Articles</button>
+  <button mat-button (click)="loadArticles.emit()">Load Top Headlines</button>
 </mat-card>
 
-<div class="example-container mat-elevation-z2" [class.hidden]="!exampleData || !exampleData.length">
+<div class="example-container mat-elevation-z2" [class.hidden]="!articles || !articles.length">
   <mat-table #table [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header start="asc"> ID </mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{item.id}} </mat-cell>
+    <ng-container matColumnDef="author">
+      <mat-header-cell *matHeaderCellDef mat-sort-header start="asc"> Author </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{item.author}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="title">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
