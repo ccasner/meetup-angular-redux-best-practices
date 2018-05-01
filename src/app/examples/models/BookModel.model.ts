@@ -1,4 +1,4 @@
-export interface ExampleModel {
+export interface BookModel {
     id: number;
     title: string;
 }
