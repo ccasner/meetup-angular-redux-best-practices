@@ -1,19 +1,19 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { ExampleModel } from '../../models/ExampleModel.model';
+import { BookModel } from '../../models/BookModel.model';
 
 @Component({
-  selector: 'app-example-data-display',
-  templateUrl: './example-data-display.component.html',
-  styleUrls: ['./example-data-display.component.scss'],
+  selector: 'app-book-data-display',
+  templateUrl: './book-data-display.component.html',
+  styleUrls: ['./book-data-display.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExampleDataDisplayComponent implements AfterViewInit {
+export class BookDataDisplayComponent implements AfterViewInit {
   displayedColumns = ['id', 'title'];
-  exampleData: ExampleModel[];
-  dataSource: MatTableDataSource<ExampleModel>;
+  exampleData: BookModel[];
+  dataSource: MatTableDataSource<BookModel>;
 
-  @Input() set inputExampleData(exampleData: ExampleModel[]) {
+  @Input() set inputExampleData(exampleData: BookModel[]) {
     this.exampleData = exampleData;
     this.setDataSource(this.exampleData, this.paginator, this.sort);
   }
@@ -32,8 +32,8 @@ export class ExampleDataDisplayComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  setDataSource(exampleData: ExampleModel[], paginator: MatPaginator, sort: MatSort) {
-    this.dataSource = new MatTableDataSource<ExampleModel>(exampleData);
+  setDataSource(exampleData: BookModel[], paginator: MatPaginator, sort: MatSort) {
+    this.dataSource = new MatTableDataSource<BookModel>(exampleData);
 
     if (paginator) {
       this.dataSource.paginator = paginator;

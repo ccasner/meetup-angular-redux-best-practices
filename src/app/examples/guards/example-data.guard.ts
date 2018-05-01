@@ -4,9 +4,9 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, switchMap, take, tap } from 'rxjs/operators';
-import { LoadData } from '../store/example-data/example-data.actions';
-import * as fromExampleData from '../store/example-data/example-data.reducer';
-import { getHasExampleData } from '../store/example-data/example-data.selectors';
+import { LoadBooks } from '../store/book-data/book-data.actions';
+import * as fromExampleData from '../store/book-data/book-data.reducer';
+import { getHasBookData } from '../store/book-data/book-data.selectors';
 
 @Injectable()
 export class ExampleDataGuard implements CanActivate {
@@ -14,10 +14,10 @@ export class ExampleDataGuard implements CanActivate {
 
     getFromStoreOrAPI(): Observable<boolean> {
         return this.store.pipe(
-            select(getHasExampleData),
+            select(getHasBookData),
             tap((hasData) => {
                 if (!hasData) {
-                    this.store.dispatch(new LoadData(1));
+                    this.store.dispatch(new LoadBooks(1));
                 }
             }),
             take(1)
