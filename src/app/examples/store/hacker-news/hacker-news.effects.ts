@@ -20,7 +20,11 @@ export class HackerNewsEffects {
         'apiKey=b35d15dba5da4ba087e6ddf2e8dc7bb0';
         return this.http.get<TopHeadlinesModel[]>(topHeadlinesUrl).pipe(
           map(resp => resp[0].articles),
-          map(data =>  new LoadArticlesSuccess(data.map(item => Object.assign({}, {id: item.source.id, changes: item})))),
+          map(articles => articles.map( (a, i) => {
+            a.id = i;
+            return a;
+          })),
+          map(data =>  new LoadArticlesSuccess(data.map(item => Object.assign({}, {id: item.id, changes: item})))),
           catchError(err => of(new LoadArticlesError(err))),
         );
      }),

@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 // store
 import { reducers } from './store';
 import { BookDataEffects } from './store/book-data/book-data.effects';
+import { HackerNewsEffects } from './store/hacker-news/hacker-news.effects';
 
 // modules
 import { ExamplesRoutingModule } from './examples-routing.module';
@@ -28,7 +29,7 @@ import { ExampleDataGuard } from './guards/example-data.guard';
     ExamplesRoutingModule,
     MaterialModule,
     StoreModule.forFeature('examples', reducers),
-    EffectsModule.forFeature([BookDataEffects])
+    EffectsModule.forFeature([BookDataEffects, HackerNewsEffects])
   ],
   declarations: [
     BookDataComponent,

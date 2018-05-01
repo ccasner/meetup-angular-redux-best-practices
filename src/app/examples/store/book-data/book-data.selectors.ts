@@ -1,10 +1,10 @@
 import { createSelector } from '@ngrx/store';
 import { ExamplesState, getExamplesState } from '../../store';
-import * as fromExampleData from './book-data.reducer';
+import * as fromBookData from './book-data.reducer';
 
 export const getBookEntitiesState = createSelector(
     getExamplesState,
-    (state: ExamplesState) => state.exampleData
+    (state: ExamplesState) => state.bookData
 );
 
 export const {
@@ -12,7 +12,7 @@ export const {
     selectEntities: getBookEntities,
     selectAll: getAllBooks,
     selectTotal: getTotalBooks,
-} = fromExampleData.adapter.getSelectors(getBookEntitiesState);
+} = fromBookData.adapter.getSelectors(getBookEntitiesState);
 
 export const getBookData = createSelector(
     getBookEntities,
@@ -24,12 +24,12 @@ export const getBookData = createSelector(
 
 export const getBookDataLoading = createSelector(
     getBookEntitiesState,
-    (state: fromExampleData.State) => state.bookDataLoading
+    (state: fromBookData.State) => state.bookDataLoading
 );
 
 export const getBookDataLoadError = createSelector(
     getBookEntitiesState,
-    (state: fromExampleData.State) => state.bookDataLoadError
+    (state: fromBookData.State) => state.bookDataLoadError
 );
 
 export const getHasBookData = createSelector(

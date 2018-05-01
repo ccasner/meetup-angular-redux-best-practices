@@ -9,7 +9,7 @@ export interface State extends EntityState<ArticlesModel> {
 }
 
 export const adapter = createEntityAdapter<ArticlesModel>({
-  selectId: (item: ArticlesModel) => item.source.id,
+  selectId: (item: ArticlesModel) => item.id,
   sortComparer: false
 });
 

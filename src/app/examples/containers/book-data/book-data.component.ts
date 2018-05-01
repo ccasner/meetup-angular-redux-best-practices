@@ -21,11 +21,11 @@ export class BookDataComponent {
     this.store.dispatch(new SetTitle('Example Data'));
   }
 
-  clearExampleData() {
+  clearBookData() {
     this.store.dispatch(new ClearBooks());
   }
 
-  loadData($event: number) {
+  loadBooks($event: number) {
     this.store.dispatch(new LoadBooks($event));
   }
 }

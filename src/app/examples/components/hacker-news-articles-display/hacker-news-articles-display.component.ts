@@ -9,11 +9,14 @@ import { ArticlesModel } from '../../models/HackerNewsModel.model';
 })
 export class HackerNewsArticlesDisplayComponent implements AfterViewInit {
 
-  displayedColumns = ['author', 'title'];
+  displayedColumns = ['id', 'title'];
   articles: ArticlesModel[];
   dataSource: MatTableDataSource<ArticlesModel>;
 
   @Input() set inputArticles(articles: ArticlesModel[]) {
+    if (!articles) {
+      articles = [] as ArticlesModel[];
+    }
     this.articles = articles;
     this.setDataSource(this.articles, this.paginator, this.sort);
   }

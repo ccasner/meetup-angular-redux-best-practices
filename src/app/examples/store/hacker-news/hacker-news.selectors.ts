@@ -31,5 +31,5 @@ export const getArticlesLoadError = createSelector(
 );
 export const getHasArticles = createSelector(
     getArticles,
-    (data) => data && data.length > 0
+    (data) => data.length > 0
 );
