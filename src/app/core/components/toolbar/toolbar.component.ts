@@ -15,6 +15,15 @@ export class ToolbarComponent implements OnInit {
 
   constructor() { }
 
+  // Bad Example 1
+  /*
+    constructor(private store: Store<State>) {
+      this.store.pipe(select(getBookData)).subscribe(books => {
+        this.exampleDataCount = books.length;
+      });
+    }
+  */
+
   ngOnInit() {
   }
 
