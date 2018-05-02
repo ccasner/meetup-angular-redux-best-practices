@@ -15,7 +15,7 @@ export class ToolbarComponent implements OnInit {
 
   constructor() { }
 
-  // Bad Example 1
+  // Bad Example 1 - pass store to dumb components
   /*
     constructor(private store: Store<State>) {
       this.store.pipe(select(getBookData)).subscribe(books => {
