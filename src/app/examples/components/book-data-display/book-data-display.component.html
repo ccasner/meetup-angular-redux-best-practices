@@ -3,6 +3,7 @@
   <button mat-button (click)="clearData()">Clear Data</button>
   <button mat-button (click)="loadBooks.emit(1)">Load Data Set 1</button>
   <button mat-button (click)="loadBooks.emit(2)">Load Data Set 2</button>
+  <button mat-button (click)="loadBooks.emit(3)">Load Error Data Set</button>
 </mat-card>
 
 <div class="example-container mat-elevation-z2" [class.hidden]="!books || !books.length">

@@ -1,6 +1,7 @@
 import { Update } from '@ngrx/entity';
 import { Action } from '@ngrx/store';
 import { BookModel } from '../../models/BookModel.model';
+import { HttpErrorResponse } from '@angular/common/http';
 
 export enum BookDataActionTypes {
   LoadBooks = '[Books] Load Data',
@@ -19,7 +20,7 @@ export class LoadBooksSuccess implements Action {
 }
 export class LoadBooksError implements Action {
   readonly type = BookDataActionTypes.LoadBooksError;
-  constructor(public payload: any) { }
+  constructor(public payload: any | HttpErrorResponse) { }
 }
 export class ClearBooks implements Action {
   readonly type = BookDataActionTypes.ClearBooks;

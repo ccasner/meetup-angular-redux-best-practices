@@ -18,7 +18,7 @@ import { BookDataComponent } from './containers/book-data/book-data.component';
 import { BookDataDisplayComponent } from './components/book-data-display/book-data-display.component';
 
 // providers
-import { ExampleDataGuard } from './guards/example-data.guard';
+import { BookDataGuard } from './guards/book-data.guard';
 
 @NgModule({
   imports: [
@@ -32,6 +32,6 @@ import { ExampleDataGuard } from './guards/example-data.guard';
     BookDataComponent,
     BookDataDisplayComponent,
   ],
-  providers: [ExampleDataGuard],
+  providers: [BookDataGuard],
 })
 export class ExamplesModule { }
