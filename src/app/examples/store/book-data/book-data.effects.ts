@@ -44,5 +44,22 @@ export class BookDataEffects {
     }),
   );
 
+  /**
+  * Bad Example 3 - don't create an effect for derived state
+  *
+  @Effect()
+  setBookTheme$ = this.actions$
+    .ofType<LoadBooks>(BookDataActionTypes.LoadThemeSuccess)
+    .pipe(
+      map(action => action.payload),
+      map(({ data }) => new SetBookTheme(data.theme)),
+  );
+
+  export const getBookTheme = createSelector(
+    getBookData,
+    (data) => data.theme
+  );
+  */
+
   constructor(private actions$: Actions, private http: HttpClient, private snackBar: MatSnackBar) {}
 }
