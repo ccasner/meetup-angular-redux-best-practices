@@ -7,6 +7,7 @@ export interface TopHeadlinesModel {
 }
 
 export interface ArticlesModel {
+    id: number;
     source: SourceModel;
     author: string;
     title: string;

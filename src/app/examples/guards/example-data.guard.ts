@@ -5,12 +5,12 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, switchMap, take, tap } from 'rxjs/operators';
 import { LoadBooks } from '../store/book-data/book-data.actions';
-import * as fromExampleData from '../store/book-data/book-data.reducer';
+import * as fromBookData from '../store/book-data/book-data.reducer';
 import { getHasBookData } from '../store/book-data/book-data.selectors';
 
 @Injectable()
 export class ExampleDataGuard implements CanActivate {
-    constructor(private store: Store<fromExampleData.State>) { }
+    constructor(private store: Store<fromBookData.State>) { }
 
     getFromStoreOrAPI(): Observable<boolean> {
         return this.store.pipe(

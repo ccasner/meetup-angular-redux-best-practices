@@ -10,20 +10,20 @@ import { BookModel } from '../../models/BookModel.model';
 })
 export class BookDataDisplayComponent implements AfterViewInit {
   displayedColumns = ['id', 'title'];
-  exampleData: BookModel[];
+  books: BookModel[];
   dataSource: MatTableDataSource<BookModel>;
 
   @Input() set inputExampleData(exampleData: BookModel[]) {
-    this.exampleData = exampleData;
-    this.setDataSource(this.exampleData, this.paginator, this.sort);
+    this.books = exampleData;
+    this.setDataSource(this.books, this.paginator, this.sort);
   }
-  @Output() clearExampleData = new EventEmitter();
-  @Output() loadData = new EventEmitter<number>();
+  @Output() clearBookData = new EventEmitter();
+  @Output() loadBooks = new EventEmitter<number>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   clearData() {
-    this.clearExampleData.emit();
+    this.clearBookData.emit();
     this.dataSource.paginator.firstPage();
   }
 
